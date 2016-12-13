@@ -21,6 +21,10 @@ const ReactBoilerplate = {
        * by listing them here.
        */
       exclude: [
+        '@types/node',
+        '@types/react',
+        '@types/react-dom',
+        '@types/immutable',
         'chalk',
         'compression',
         'cross-env',
