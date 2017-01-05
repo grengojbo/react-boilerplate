@@ -50,10 +50,25 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.(ts|tsx)$": "preprocessor.js"
+      "^.+\\.(ts|tsx|js|jsx)$": "preprocessor.js"
     },
-    "transformIgnorePatterns": [
-      "/node_modules/"
+    "bail": false,
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    },
+    "modulePaths": [
+      "<rootDir>/app",
+      "<rootDir>/node_modules"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -62,7 +77,8 @@
       "jsx",
       "json"
     ],
-    "testRegex": "/__tests__/.*\\.test\\.(ts|tsx)$"
+    "testRegex": "/(__tests__)/.*\\.test\\.(ts|tsx|js|jsx)$",
+    "verbose": true
   },
   "lint-staged": {
     "*.js": "lint:eslint"
@@ -184,10 +200,14 @@
   "dllPlugin": {
     "path": "node_modules/react-boilerplate-dlls",
     "exclude": [
+      "@types/immutable",
+      "@types/jest",
       "@types/node",
       "@types/react",
+      "@types/react-addons-test-utils",
       "@types/react-dom",
-      "@types/immutable",
+      "@types/react-router",
+      "@types/reselect",
       "chalk",
       "compression",
       "cross-env",
@@ -203,11 +223,13 @@
     ]
   },
   "dependencies": {
-    "@types/jest": "^16.0.1",
     "@types/immutable": "^3.8.6",
+    "@types/jest": "^16.0.1",
     "@types/node": "0.0.3",
     "@types/react": "^0.14.55",
+    "@types/react-addons-test-utils": "^0.14.15",
     "@types/react-dom": "^0.14.19",
+    "@types/react-redux": "^4.4.35",
     "@types/react-router": "^2.0.41",
     "@types/reselect": "^2.0.27",
     "babel-polyfill": "6.16.0",
@@ -265,7 +287,8 @@
     "cheerio": "0.22.0",
     "coveralls": "2.11.14",
     "css-loader": "0.25.0",
-    "enzyme": "2.5.1",
+    "enzyme": "^2.5.1",
+    "enzyme-to-json": "^1.4.4",
     "eslint": "^3.12.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-config-airbnb-base": "^10.0.1",
@@ -285,6 +308,7 @@
     "html-webpack-plugin": "2.24.0",
     "image-webpack-loader": "2.0.0",
     "imports-loader": "0.6.5",
+    "jest": "^17.0.3",
     "jest-cli": "^17.0.3",
     "json-loader": "0.5.4",
     "karma": "1.3.0",
@@ -321,7 +345,7 @@
     "postcss-selector-not": "^2.0.0",
     "pre-commit": "1.1.3",
     "psi": "2.0.4",
-    "react-addons-test-utils": "^15.3.2",
+    "react-addons-test-utils": "^15.4.1",
     "react-test-renderer": "^15.4.1",
     "rimraf": "2.5.4",
     "sass-loader": "^4.0.2",

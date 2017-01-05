@@ -22,6 +22,28 @@
       "port": 9222,
       "sourceMaps": true,
       "webRoot": "${workspaceRoot}"
+    },
+    {
+      "name": "Debug Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
+      "stopOnEntry": false,
+      "args": [
+        "--runInBand --config ${workspaceRoot}/jese.json"
+      ],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": "tsc",
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+        "--harmony"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "sourceMaps": true,
+      "outDir": null,
+      "port": 9070
     }
   ]
 }

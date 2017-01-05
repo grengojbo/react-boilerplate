@@ -55,6 +55,14 @@
 npm run start
 ```
 
+.babelrc
+
+```code
+{
+  "presets": [["latest", { "es2015": { "modules": false } }], "react", "stage-0"]
+}
+```
+
 ## Features
 
 <dl>

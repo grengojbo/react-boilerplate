@@ -1,0 +1,18 @@
+{
+  "transform": {
+    "^.+\\.(ts|tsx|js|jsx)$": "preprocessor.js"
+  },
+  "bail": false,
+  "modulePaths": [
+    "<rootDir>/app",
+    "<rootDir>/node_modules"
+  ],
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json"
+  ],
+  "testRegex": "/(__tests__)/.*\\.test\\.(ts|tsx|js|jsx)$"
+}

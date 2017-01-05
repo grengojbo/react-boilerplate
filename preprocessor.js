@@ -23,7 +23,7 @@ module.exports = {
       );
     }
     if (path.endsWith('.js') || path.endsWith('.jsx')) {
-        return babelJest.process(src, path);
+      return babelJest.process(src, path);
     }
     return src;
   },

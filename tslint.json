@@ -64,7 +64,7 @@
             "check-open-brace",
             "check-whitespace"
         ],
-        "quotemark": [ true, "double" ],
+        "quotemark": [ true, "single" ],
         "radix": true,
         "semicolon": true,
         "switch-default": true,
