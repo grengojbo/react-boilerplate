@@ -8,12 +8,12 @@
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
-/* eslint-disable import/no-unresolved, import/extensions */
+/* eslint-disable import/no-unresolved, import/extensions import/no-webpack-loader-syntax */
 // Load the favicon, the manifest.json file and the .htaccess file
 import 'file?name=[name].[ext]!./favicon.ico';
 import '!file?name=[name].[ext]!./manifest.json';
-import 'file?name=[name].[ext]!./.htaccess';
-/* eslint-enable import/no-unresolved, import/extensions */
+// import 'file?name=[name].[ext]!./.htaccess';
+/* eslint-enable import/no-unresolved, import/extensions import/no-webpack-loader-syntax */
 
 // Import all the third party stuff
 import React from 'react';
